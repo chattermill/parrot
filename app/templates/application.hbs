@@ -1,6 +1,21 @@
 <h2 id="title">Welcome to Ember.js</h2>
 
 {{#if session.isAuthenticated}}
+  {{session.currentUser.email}}
+
+  <ul>
+    {{#each session.currentUser.availableMailchimpLists as |list|}}
+      <li>{{list.name}}!</li>
+    {{/each}}
+  </ul>
+
+  {{ember-selectize
+    content=session.currentUser.availableMailchimpLists
+    optionValuePath="content.mailchimpId"
+    optionLabelPath="content.name"
+    selection=model.selectedMailchimpListId
+    placeholder="Select an item" }}
+  {{!-- {{session.currentUser.availableMailchimpLists}} --}}
     Welcome logged in user!
     If you like to logout click {{#link-to 'logout'}}here{{/link-to}}
 {{else}}
