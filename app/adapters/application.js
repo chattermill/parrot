@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import ENV from "my-app/config/environment";
+import ENV from "parrot/config/environment";
 
 export default DS.ActiveModelAdapter.extend({
   namespace: 'api',
