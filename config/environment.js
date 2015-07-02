@@ -10,7 +10,7 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
-      }
+      },
     },
 
     APP: {
@@ -30,7 +30,7 @@ module.exports = function(environment) {
 
     torii: {
       // a 'session' property will be injected on routes and controllers
-      sessionServiceName: 'session',
+      // sessionServiceName: 'session',
       providers: {
         'mailchimp-oauth2': {
           apiKey:      '479693114617',
@@ -38,9 +38,11 @@ module.exports = function(environment) {
         }
       }
     }
+
   };
 
   if (environment === 'development') {
+    ENV.host = 'http://localhost:3000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -63,6 +65,17 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+    
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:oauth2-bearer',
+    crossOriginWhitelist: [ENV.host]
+    // routeAfterAuthentication: 'settings'
+  };
+
+  ENV['simple-auth-oauth2'] = {
+    serverTokenEndpoint: ENV.host + '/api/sessions'
+  };
 
   return ENV;
 };
