@@ -2,6 +2,11 @@
 
 {{#if session.isAuthenticated}}
   {{session.currentUser.email}}
+  <ul>
+  {{#each session.currentUser.lists as |list|}}
+    <li>{{list.name}}</li>
+  {{/each}}
+  </ul>
     Welcome logged in user!
     If you like to logout click {{#link-to 'logout'}}here{{/link-to}}
 {{else}}
