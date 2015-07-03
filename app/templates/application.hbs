@@ -1,6 +1,7 @@
 <h2 id="title">Welcome to Ember.js</h2>
 
 {{#if session.isAuthenticated}}
+  {{session.currentUser.email}}
     Welcome logged in user!
     If you like to logout click {{#link-to 'logout'}}here{{/link-to}}
 {{else}}
