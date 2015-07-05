@@ -37,7 +37,8 @@ module.exports = function(environment) {
           redirectUri: 'http://127.0.0.1:4200'
         }
       }
-    }
+    },
+    filepickerKey: 'AcoXd9enaQcivHNs2tP0Bz'
 
   };
 
@@ -69,7 +70,7 @@ module.exports = function(environment) {
     
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:oauth2-bearer',
-    crossOriginWhitelist: [ENV.host],
+    crossOriginWhitelist: ['http://localhost:3000'],
     session: 'session:custom'
     // routeAfterAuthentication: 'settings'
   };

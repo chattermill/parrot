@@ -2,14 +2,22 @@
 
 {{#if session.isAuthenticated}}
   {{session.currentUser.email}}
-  <ul>
-  {{#each session.currentUser.lists as |list|}}
-    <li>{{list.name}}</li>
-  {{/each}}
-  </ul>
-    Welcome logged in user!
+
+  {{ember-selectize
+    content= lists
+    optionValuePath="content.id"
+    optionLabelPath="content.name"
+    value=selected
+    select-item="selectList"
+    placeholder="Select the list you want to survey"}}
+
     If you like to logout click {{#link-to 'logout'}}here{{/link-to}}
+    If you like to logout click {{#link-to 'protected'}}protected{{/link-to}}
+
 {{else}}
+
+
   <button {{action 'authenticate'}}>Login with Mailchimp</button> 
 {{/if}}
+
 {{outlet}}
