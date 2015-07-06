@@ -6,5 +6,6 @@ export default DS.Model.extend({
   backgroundColor: DS.attr('string'),
   foregroundColor: DS.attr('string'),
   replyAddress: DS.attr('string'),
+  imageUrl: DS.attr('string'),
   user: DS.belongsTo('user', {async: true})
 });

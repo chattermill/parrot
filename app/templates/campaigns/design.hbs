@@ -4,5 +4,20 @@
   {{fm-field type='text' value=model.fromName label='From name'}}
   {{fm-field type='text' value=model.replyAddress label='Reply address'}}
 
+  <label>Background Color</label>
+  {{col-pick-input value=model.backgroundColor}}
+  <div style="display:inline-block;height:20px;width:20px;background-color: #{{model.backgroundColor}}"></div>
+  
+  <label>Foreground Color</label>
+  {{col-pick-input value=model.foregroundColor}}
+  <div style="display:inline-block;height:20px;width:20px;background-color: #{{model.foregroundColor}}"></div>
+
+  {{#if showFilePicker}}
+    {{ember-filepicker onSelection='fileSelected' onClose='onClose' onError='onError'}}
+  {{/if}}
+    <button {{action 'showPicker'}}>Choose logo</button>
+  {{outlet}}
+
+
    {{fm-submit value='Create campaign'}}
 {{/fm-form}}
