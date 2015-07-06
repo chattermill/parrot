@@ -1,3 +1,4 @@
+<div class="container">
 {{#fm-form action='createCampaign'}}
 
   {{fm-field type='text' value=model.companyName label='Company name'}}
@@ -11,7 +12,6 @@
   <label>Foreground Color</label>
   {{col-pick-input value=model.foregroundColor}}
   <div style="display:inline-block;height:20px;width:20px;background-color: #{{model.foregroundColor}}"></div>
-
   {{#if showFilePicker}}
     {{ember-filepicker onSelection='fileSelected' onClose='onClose' onError='onError'}}
   {{/if}}
@@ -21,3 +21,4 @@
 
    {{fm-submit value='Create campaign'}}
 {{/fm-form}}
+</div>
