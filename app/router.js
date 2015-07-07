@@ -15,6 +15,7 @@ Router.map(function() {
   });
   this.route('campaign', { path: '/campaign/:campaign_id' });
   this.route('campaigns/design');
+  this.route('survey-responses/new', {path: '/responses/new'});
 });
 
 export default Router;
