@@ -10,10 +10,7 @@ Router.map(function() {
   this.route('login');
   this.route('protected');
   this.route('settings');
-  this.route('campaigns', function() {
-    this.route('design');
-  });
-  this.route('campaign', { path: '/campaign/:campaign_id' });
+  this.route('campaign', { path: '/campaigns/:campaign_id' });
   this.route('campaigns/design');
   this.route('survey-responses/new', {path: '/responses/new'});
 });
