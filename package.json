@@ -20,11 +20,12 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
-    "ember-cli": "0.2.7",
+    "ember-cli": "1.13.0",
     "ember-cli-app-version": "0.3.3",
     "ember-cli-babel": "^5.0.0",
     "ember-cli-bootstrap-sassy": "0.0.18",
     "ember-cli-content-security-policy": "0.4.0",
+    "ember-cli-data-validation": "0.0.8",
     "ember-cli-dates": "1.1.2",
     "ember-cli-dependency-checker": "^1.0.0",
     "ember-cli-filepicker": "0.1.8",
@@ -43,6 +44,7 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
     "ember-form-master-2000": "0.2.0",
+    "ember-model-validator": "0.0.18",
     "ember-percentages": "1.1.0",
     "ember-watson": "0.5.9",
     "torii": "0.4.1"

@@ -1,20 +1,21 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
-{{#if session.isAuthenticated}}
-  {{session.currentUser.email}}
-
-  {{ember-selectize
-    content= lists
-    optionValuePath="content.id"
-    optionLabelPath="content.name"
-    value=selected
-    select-item="selectList"
-    placeholder="Select the list you want to survey"}}
-
+<div class="container">
+  {{#if session.isAuthenticated}}
+    {{session.currentUser.email}}
+  <p>
     If you like to logout click {{#link-to 'logout'}}here{{/link-to}}
+  </p>
+  {{else}}
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-center">
+        <img class="img-responsive center-block" src="http://cdn.blog.cpcstrategy.com/wp-content/uploads/2014/06/top-email-marketing-service-mailchimp-logo.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5">
+        <button {{action 'authenticate'}} class="btn btn-large btn-success">Login with Mailchimp</button> 
+      </div>
+    </div>
+  {{/if}}
 
-{{else}}
-  <button {{action 'authenticate'}}>Login with Mailchimp</button> 
-{{/if}}
-
-{{outlet}}
+  {{outlet}}
+</div>

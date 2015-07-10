@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   filepicker: Ember.inject.service(),
   currentUser: Ember.computed.alias('session.currentUser'),
   showFilePicker: false,
-
+  
   actions: {
     fileSelected: function(data) {
       var campaign = this.get('model');
@@ -31,6 +31,7 @@ export default Ember.Controller.extend({
     createCampaign: function() {
       var campaign = this.get('model');
       campaign.set('user', this.get('currentUser'));
+
       campaign.save().then(() => {
         this.transitionToRoute('campaigns');
       });

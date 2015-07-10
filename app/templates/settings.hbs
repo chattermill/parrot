@@ -1,1 +1,9 @@
-<button {{action 'updateUser'}}>Update</button> 
+{{ember-selectize
+  content=lists
+  optionValuePath="content.id"
+  optionLabelPath="content.name"
+  value=selected
+  select-item="selectList"
+  placeholder="Select the list you want to survey"}}
+
+{{#link-to 'campaigns/design'}}Create a new campaign{{/link-to}}

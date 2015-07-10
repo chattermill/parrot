@@ -1,9 +1,14 @@
 <div class="container">
 {{#fm-form action='createCampaign'}}
 
-  {{fm-field type='text' value=model.companyName label='Company name'}}
-  {{fm-field type='text' value=model.fromName label='From name'}}
-  {{fm-field type='text' value=model.replyAddress label='Reply address'}}
+  {{fm-field type='text' value=model.companyName label='Company name'
+  errors=model.errors.companyName.firstObject}}
+  {{fm-field type='url' value=model.companyUrl label='Company url'
+  errors=model.errors.companyUrl.firstObject}}
+  {{fm-field type='text' value=model.fromName label='From name'
+  errors=model.errors.fromName.firstObject}}
+  {{fm-field type='email' value=model.fromAddress label='From address' errors=model.errors.fromAddress.firstObject}}
+  {{fm-field type='email' value=model.replyAddress label='Reply address' errors=model.errors.replyAddress.firstObject}}
 
   <label>Background Color</label>
   {{col-pick-input value=model.backgroundColor}}
@@ -13,6 +18,7 @@
   {{col-pick-input value=model.foregroundColor}}
   <div style="display:inline-block;height:20px;width:20px;background-color: #{{model.foregroundColor}}"></div>
   {{#if showFilePicker}}
+    {{campaignErrors.imageUrl}}
     {{ember-filepicker onSelection='fileSelected' onClose='onClose' onError='onError'}}
   {{/if}}
     <button {{action 'showPicker'}}>Choose logo</button>
