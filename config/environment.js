@@ -38,7 +38,12 @@ module.exports = function(environment) {
         }
       }
     },
-    filepickerKey: 'AcoXd9enaQcivHNs2tP0Bz'
+    filepickerKey: 'AcoXd9enaQcivHNs2tP0Bz',
+    algolia: {
+      appId: "90Q6YHP7GM",
+      apiKey: "00a0cf2e67a3fbdd996120601ec18b98",
+      index: "SurveyResponse_development"
+    }
 
   };
 

@@ -12,19 +12,16 @@
 
   <label>Background Color</label>
   {{col-pick-input value=model.backgroundColor}}
-  <div style="display:inline-block;height:20px;width:20px;background-color: #{{model.backgroundColor}}"></div>
+  <div style={{backgroundStyle}}></div>
   
   <label>Foreground Color</label>
   {{col-pick-input value=model.foregroundColor}}
-  <div style="display:inline-block;height:20px;width:20px;background-color: #{{model.foregroundColor}}"></div>
+  <div style={{foregroundStyle}}></div>
+  
   {{#if showFilePicker}}
-    {{campaignErrors.imageUrl}}
     {{ember-filepicker onSelection='fileSelected' onClose='onClose' onError='onError'}}
   {{/if}}
-    <button {{action 'showPicker'}}>Choose logo</button>
-  {{outlet}}
-
-
-   {{fm-submit value='Create campaign'}}
+    <button class="btn  btn-default" {{action 'showPicker'}}>Choose logo</button>
+     {{fm-submit value='Create campaign'}}
 {{/fm-form}}
 </div>

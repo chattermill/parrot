@@ -8,12 +8,13 @@ export default Ember.Controller.extend({
   
   actions: {
     submitResponse: function() {
+      var controller = this;
       var response = this.get('response');
 
       response.set('token', this.get('token'));
       response.set('score', this.get('score'));
       response.save().then(() => {
-        alert('saved');
+        controller.transitionToRoute('thank-you');
       });
     }
   }

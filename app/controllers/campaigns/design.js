@@ -4,6 +4,16 @@ export default Ember.Controller.extend({
   filepicker: Ember.inject.service(),
   currentUser: Ember.computed.alias('session.currentUser'),
   showFilePicker: false,
+
+   backgroundStyle: Ember.computed('model.backgroundColor', function() {
+    var color = this.get('model.backgroundColor');
+    return new Ember.Handlebars.SafeString("display:inline-block;height:20px;width:20px;background-color: #" + color);
+  }),
+
+  foregroundStyle: Ember.computed('model.foregroundColor', function() {
+    var color = this.get('model.foregroundColor');
+    return new Ember.Handlebars.SafeString("display:inline-block;height:20px;width:20px;background-color: #" + color);
+  }),
   
   actions: {
     fileSelected: function(data) {

@@ -1,7 +1,9 @@
 <ul>
   {{#each model as |campaign|}}
     <li>
-      {{campaign.companyName}}
+      {{#link-to 'campaign' campaign.id}}
+        {{campaign.companyName}} - {{time-format campaign.createdAt "MMMM D YYYY"}}
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>

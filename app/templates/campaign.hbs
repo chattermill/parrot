@@ -4,4 +4,33 @@
 
   
   <p>{{percentage model.npsScore}}</p>
+
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" style={{promoterBarStyle}}>
+      {{percentage model.percentagePromoters}} Promoters
+    </div>
+    <div class="progress-bar progress-bar-warning" style={{passiveBarStyle}}>
+      <span class="sr-only">{{percentage model.percentagePassives}}</span>
+    </div>
+    <div class="progress-bar progress-bar-danger" style={{detractorBarStyle}}>
+      {{percentage model.percentageDetractors}}
+    </div>
+  </div>
+
+  {{#fm-form action='searchResponses'}}
+    {{fm-field type='text' value=query placeholder='Search'}}
+  {{/fm-form}}
+
+{{#if results}}
+  <ul>
+  {{#each results as |result|}}
+    <li>
+      {{result.body}}
+    </li>
+  {{/each}}
+  </ul>
+{{else}}
+  No responses yet.
+{{/if}}
+  
 </div>

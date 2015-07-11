@@ -37,5 +37,6 @@ export default DS.Model.extend(ValidatorMixin, {
   percentagePromoters: DS.attr('number'),
   percentageDetractors: DS.attr('number'),
   createdAt: DS.attr('date'),
+  lastResponses: DS.attr(),
   user: DS.belongsTo('user', { async: true }),
 });

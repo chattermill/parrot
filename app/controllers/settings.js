@@ -11,7 +11,9 @@ export default Ember.Controller.extend({
 
       controller.get('session.currentUser').then(function(user) {
         user.set('selected', listId);
-        user.save();
+        user.save().then(()=> {
+          controller.transitionToRoute('campaigns/design');
+        });
       });
     }
   } 

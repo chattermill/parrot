@@ -11,8 +11,10 @@ Router.map(function() {
   this.route('protected');
   this.route('settings');
   this.route('campaign', { path: '/campaigns/:campaign_id' });
+  this.route('campaigns');
   this.route('campaigns/design');
   this.route('survey-responses/new', {path: '/responses/new'});
+  this.route('thank-you');
 });
 
 export default Router;
