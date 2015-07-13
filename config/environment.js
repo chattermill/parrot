@@ -35,8 +35,8 @@ module.exports = function(environment) {
   if (environment === 'development') {
     ENV.host = 'http://localhost:3000';
     ENV.algolia = {
-      appId: "90Q6YHP7GM",
-      apiKey: "00a0cf2e67a3fbdd996120601ec18b98",
+      appId: "PQFIJ1TA2P",
+      apiKey: "99a5fc4584a4072d1903c319594ae567",
       index: "SurveyResponse_development"
     };
     ENV.filepickerKey = 'AcoXd9enaQcivHNs2tP0Bz';
@@ -70,6 +70,11 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.host = 'http://parrot-api.herokuapp.com';
     ENV.filepickerKey = 'AcoXd9enaQcivHNs2tP0Bz';
+    ENV.algolia = {
+      appId: "PQFIJ1TA2P",
+      apiKey: "99a5fc4584a4072d1903c319594ae567",
+      index: "SurveyResponse_production"
+    };
     ENV.torii = {
       providers: {
         'mailchimp-oauth2': {

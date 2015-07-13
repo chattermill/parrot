@@ -58,6 +58,5 @@
     "ember-tooltips": "0.1.1",
     "ember-watson": "0.5.9",
     "torii": "0.4.1"
-  },
-  "dependencies": {}
+  }
 }
