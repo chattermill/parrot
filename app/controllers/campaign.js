@@ -22,19 +22,20 @@ export default Ember.Controller.extend({
 
   actions: {
     searchResponses: function() {
-      var query = this.get('query');
-      var campaignId = this.get('campaignId');
-      var index = this.get('search.index');
+      var controller = this;
+      var query = controller.get('query');
+      var campaignId = controller.get('campaignId');
+      var index = controller.get('search.index');
 
       if (Ember.isEmpty(query)){
-        this.set('results', null);
+        var defaultResults = controller.get('model.lastResponses');
+        controller.set('results', defaultResults);
         return;
       } else { 
         index.search(query, {
           tagFilters: ["campaign_" + campaignId]
         }).then(data => {
-          console.log(data);
-          this.set('results', data.hits);
+          controller.set('results', data.hits);
         }).catch(function(err){
           console.log('err', err);
         });

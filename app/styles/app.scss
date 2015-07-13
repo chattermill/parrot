@@ -1,1 +1,8 @@
+@import "variables";
 @import "bootstrap";
+
+@import 'materialize';
+@import 'ember-cli-materialize';
+
+@import "components/nps-bar";
+@import "components/nps-bar-section";

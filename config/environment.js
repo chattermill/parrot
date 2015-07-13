@@ -21,34 +21,33 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
       'font-src': "'self'",
-      'connect-src': "'self' http://localhost:3000",
+      'connect-src': "'self' http://localhost:3000 http://parrot-api.herokuapp.com",
       'img-src': "'self'",
       'report-uri':"'localhost'",
       'style-src': "'self' 'unsafe-inline'",
       'frame-src': "'none'"
     },
+    sassOptions: {
+      includePaths: ['bower_components/materialize/sass']
+    }
+  };
 
-    torii: {
-      // a 'session' property will be injected on routes and controllers
-      // sessionServiceName: 'session',
+  if (environment === 'development') {
+    ENV.host = 'http://localhost:3000';
+    ENV.algolia = {
+      appId: "90Q6YHP7GM",
+      apiKey: "00a0cf2e67a3fbdd996120601ec18b98",
+      index: "SurveyResponse_development"
+    };
+    ENV.filepickerKey = 'AcoXd9enaQcivHNs2tP0Bz';
+    ENV.torii = {
       providers: {
         'mailchimp-oauth2': {
           apiKey:      '479693114617',
           redirectUri: 'http://127.0.0.1:4200'
         }
       }
-    },
-    filepickerKey: 'AcoXd9enaQcivHNs2tP0Bz',
-    algolia: {
-      appId: "90Q6YHP7GM",
-      apiKey: "00a0cf2e67a3fbdd996120601ec18b98",
-      index: "SurveyResponse_development"
-    }
-
-  };
-
-  if (environment === 'development') {
-    ENV.host = 'http://localhost:3000';
+    };
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -69,13 +68,23 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.host = 'http://parrot-api.herokuapp.com';
+    ENV.filepickerKey = 'AcoXd9enaQcivHNs2tP0Bz';
+    ENV.torii = {
+      providers: {
+        'mailchimp-oauth2': {
+          apiKey:      '364320889953',
+          redirectUri: 'http://beta.chattermill.io'
+        }
+      }
+    };
 
   }
 
     
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:oauth2-bearer',
-    crossOriginWhitelist: ['http://localhost:3000'],
+    crossOriginWhitelist: ['http://localhost:3000', 'http://parrot-api.herokuapp.com'],
     session: 'session:custom',
     routeAfterAuthentication: 'settings'
   };

@@ -36,6 +36,16 @@ export default DS.Model.extend(ValidatorMixin, {
   npsScore: DS.attr('number'),
   percentagePromoters: DS.attr('number'),
   percentageDetractors: DS.attr('number'),
+  percentagePassives: DS.attr('number'),
+  
+  numberOfPromoters: DS.attr('number'),
+  numberOfDetractors: DS.attr('number'),
+  numberOfPassives: DS.attr('number'),
+    
+
+  numberOfSurveysSent: DS.attr('number'),
+  numberOfResponses: DS.attr('number'),
+  responseRate: DS.attr('number'),
   createdAt: DS.attr('date'),
   lastResponses: DS.attr(),
   user: DS.belongsTo('user', { async: true }),

@@ -1,21 +1,16 @@
 <div class="container">
-  <p>{{model.companyName}}</p>
-  <p>{{time-format model.createdAt "MMMM D YYYY"}}</p>
+  <p>Product name: {{model.companyName}}</p>
+  <p>Sent at: {{time-format model.createdAt "MMMM D YYYY"}}</p>
+  <p>Number of surveyssent : {{model.numberOfSurveysSent}}</p>
+  <p>Number of responses: {{model.numberOfResponses}}</p>
+  <p>Response rate: {{percentage model.responseRate}}</p>
+
 
   
-  <p>{{percentage model.npsScore}}</p>
+  <p>Score: {{percentage model.npsScore}}</p>
 
-  <div class="progress">
-    <div class="progress-bar progress-bar-success" style={{promoterBarStyle}}>
-      {{percentage model.percentagePromoters}} Promoters
-    </div>
-    <div class="progress-bar progress-bar-warning" style={{passiveBarStyle}}>
-      <span class="sr-only">{{percentage model.percentagePassives}}</span>
-    </div>
-    <div class="progress-bar progress-bar-danger" style={{detractorBarStyle}}>
-      {{percentage model.percentageDetractors}}
-    </div>
-  </div>
+  {{nps-bar campaign=model}}
+   
 
   {{#fm-form action='searchResponses'}}
     {{fm-field type='text' value=query placeholder='Search'}}
