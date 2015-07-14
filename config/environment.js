@@ -29,6 +29,9 @@ module.exports = function(environment) {
     },
     sassOptions: {
       includePaths: ['bower_components/materialize/sass']
+    },
+    pace: {
+      theme: 'minimal'
     }
   };
 
