@@ -1,4 +1,5 @@
 import Session from 'simple-auth/session';
+import Ember from 'ember';
 
 export default Session.extend({
 
@@ -7,16 +8,11 @@ export default Session.extend({
   // // why initializer? I tried 
   // store: Ember.inject.service(), //and got error
 
-  currentUser: function() {
+  currentUser: Ember.computed('secure.user_id', 'isAuthenticated', function() {
     var userId = this.get('secure.user_id');
   
     if (userId && this.get('isAuthenticated')) {
       return this._store.find('user', userId);
     }
-  }.property('secure.user_id', 'isAuthenticated')
-
-
-
-
-
+  })
 });
