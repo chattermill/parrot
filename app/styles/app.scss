@@ -5,3 +5,26 @@
 
 @import "components/nps-bar";
 @import "components/nps-bar-section";
+@import "components/email-preview";
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  min-height: 75vh;
+}
+
+.colpick {
+    z-index: 1999;
+}
+
+.cm-form {
+  .full-width {
+    width: 100%;
+  }
+}

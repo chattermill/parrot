@@ -5,16 +5,21 @@ export default Ember.Controller.extend({
   currentUser: Ember.computed.alias('session.currentUser'),
   showFilePicker: false,
 
+  pickerOptions: {
+    mimetype: 'image/*',
+    imageMax: [400, 150]
+  },
+
    backgroundStyle: Ember.computed('model.backgroundColor', function() {
     var color = this.get('model.backgroundColor');
-    return new Ember.Handlebars.SafeString("display:inline-block;height:20px;width:20px;background-color: #" + color);
+    return new Ember.Handlebars.SafeString("color: #" + color + ";");
   }),
 
   foregroundStyle: Ember.computed('model.foregroundColor', function() {
     var color = this.get('model.foregroundColor');
-    return new Ember.Handlebars.SafeString("display:inline-block;height:20px;width:20px;background-color: #" + color);
+    return new Ember.Handlebars.SafeString("color: #" + color + ";");
   }),
-  
+    
   actions: {
     fileSelected: function(data) {
       var campaign = this.get('model');

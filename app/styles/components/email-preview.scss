@@ -1,0 +1,66 @@
+// import MUI colors
+@import "bower_components/mui/src/sass/mui/colors";
+
+// customize MUI variables
+$mui-primary-color:       #2FB153;
+$mui-primary-color-dark:  mui-color('purple', '700');
+$mui-primary-color-light: mui-color('purple', '100');
+$mui-body-bg-color:       #E5E5E5;
+$mui-btn-default-font-color: #6D6D6D;
+
+$cm-pink:                 #FE6E94;
+$mui-accent-color-dark:   mui-color('green', 'A100');
+$mui-accent-color-light:  mui-color('green', 'A400');
+$cm-vertical-padding:     20px;
+
+$mui-btn-height:          42px;
+$mui-btn-padding-horizontal: 14px;
+
+// import MUI email SASS
+@import "bower_components/mui/src/email/mui-email-inline";
+
+a.mui-btn {
+  font-size: $mui-base-font-size * 1.3;
+}
+a.cm-btn-10 {
+  padding-left: $mui-btn-padding-horizontal / 1.5; 
+  padding-right: $mui-btn-padding-horizontal / 1.5; 
+}
+.cm-logo-background {
+  background-color: $mui-primary-color;
+  padding-top: $cm-vertical-padding;
+  padding-bottom: $cm-vertical-padding;
+}
+
+.cm-nps-question {
+  padding-left: $mui-container-padding-horizontal * 1.5;
+  padding-right: $mui-container-padding-horizontal * 1.5;
+  padding-top: ($cm-vertical-padding * 4);
+  padding-bottom: ($cm-vertical-padding * 4);
+}
+
+.cm-rating-guide {
+  display: inline-block;
+  width: 45.5%;
+  padding-left: 8%;
+  color: lighten($mui-base-font-color, 53%);
+  padding-top: $cm-vertical-padding / 4;
+}
+
+.cm-rating-guide-right {
+  padding-left: 73%;
+}
+
+.cm-link {
+  @extend .mui-text-body2;
+  color: $cm-pink;
+}
+.cm-footer {
+  @extend .cm-logo-background;
+  margin-top: 33px;
+
+  .cm-link {
+    @extend .mui-text-body1;
+    color: white;
+  }
+}

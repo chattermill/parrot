@@ -1,27 +1,78 @@
-<div class="container">
-{{#fm-form action='createCampaign'}}
 
-  {{fm-field type='text' value=model.companyName label='Company name'
-  errors=model.errors.companyName.firstObject}}
-  {{fm-field type='url' value=model.companyUrl label='Company url'
-  errors=model.errors.companyUrl.firstObject}}
-  {{fm-field type='text' value=model.fromName label='From name'
-  errors=model.errors.fromName.firstObject}}
-  {{fm-field type='email' value=model.fromAddress label='From address' errors=model.errors.fromAddress.firstObject}}
-  {{fm-field type='email' value=model.replyAddress label='Reply address' errors=model.errors.replyAddress.firstObject}}
+<div class="section">
+  <div class="row">
+    <div class="col m12 l6">
+      {{#md-card title="Design your NPS campaign"}}
+        {{#md-card-content}}
+          <form {{action "createCampaign" on="submit"}} class="cm-form">
+            <div class="row">
+              <div class="input-field col s12">
+                {{md-input value=model.companyName label='Company name' required=true}}
+              </div>
+             
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                {{md-input value=model.fromName label='From name' required=true}}
+              </div>
+              <div class="input-field col s6">
+                {{md-input type="url" value=model.companyUrl label='Company URL' required=true validate=true}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                {{md-input type="email" value=model.fromAddress label='From Address' required=true  validate=true}}
+              </div>
+              <div class="input-field col s6">
+                {{md-input type="email" value=model.replyAddress label='Reply Address' validate=true required=true}}
+              </div>
+            </div>
 
-  <label>Background Color</label>
-  {{col-pick-input value=model.backgroundColor}}
-  <div style={{backgroundStyle}}></div>
-  
-  <label>Foreground Color</label>
-  {{col-pick-input value=model.foregroundColor}}
-  <div style={{foregroundStyle}}></div>
-  
-  {{#if showFilePicker}}
-    {{ember-filepicker onSelection='fileSelected' onClose='onClose' onError='onError'}}
-  {{/if}}
-    <button class="btn  btn-default" {{action 'showPicker'}}>Choose logo</button>
-     {{fm-submit value='Create campaign'}}
-{{/fm-form}}
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="mdi-av-stop prefix" style={{backgroundStyle}}></i>
+                {{col-pick-input value=model.backgroundColor id="cm-background-picker"}}
+                <label for="cm-background-picker">Background Color</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="mdi-av-stop prefix" style={{foregroundStyle}}></i>
+                {{col-pick-input value=model.foregroundColor id="cm-foreground-picker"}}
+                <label for="cm-foreground-picker">Foreground Color</label>
+              </div>
+            </div>
+
+            <div class="row">
+             <div class="input-field col s6 center-align">
+                {{md-btn text='Choose logo'
+                  buttonType='large'
+                  icon='mdi-image-camera-alt'
+                  action='showPicker'
+                  class='deep-purple darken-3 full-width'}}
+
+                {{#if showFilePicker}}
+                  {{ember-filepicker pickerOptions=pickerOptions onSelection='fileSelected' onClose='onClose' onError='onError'}}
+                {{/if}}
+              </div>
+              
+              <div class="input-field col s6 center-align">
+                {{md-btn-submit icon='mdi-content-send'
+                  buttonType='large'
+                  iconPosition='right'
+                  class='pink accent-1 full-width'
+                  text='Start campaign'}}       
+              </div>
+            </div>
+          </form>
+        {{/md-card-content}}
+      {{/md-card}}
+    </div>
+    <div class="col s12 m12 l6">
+      {{#md-card title="Preview"}}
+        {{#md-card-content}}
+          {{email-preview campaign=model}}
+        {{/md-card-content}}
+      {{/md-card}}
+
+    </div>
+  </div>
 </div>
