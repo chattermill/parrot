@@ -1,44 +1,46 @@
-<br><br>
-<h1 class="header center orange-text">Starter Template</h1>
+<h1 class="header center black-text cm-header">Free Net Promoter Score</h1>
 <div class="row center">
-  <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+  <h5 class="header col s12 light">Just connect your Mailchimp account and get started in seconds.</h5>
 </div>
 <div class="row center">
-  <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+  {{#if session.isAuthenticated}}
+    {{#link-to 'campaigns/design' class="btn-large waves-effect waves-light pink accent-1"}}
+      Get Started
+    {{/link-to}}
+  {{else}}
+    {{#link-to 'login' class="btn-large waves-effect waves-light pink accent-1"}}
+      Get Started
+    {{/link-to}}
+  {{/if}}
 </div>
-<br><br>
 
-
-
-<div class="container">
+<div class="container cm-icon-container">
     <div class="section">
-
-      <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h2 class="center light-blue-text cm-home-icons"><i class="mdi-image-flash-on"></i></h2>
+            <h5 class="center">Fastest setup</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">It only takes 10 seconds to set up your first NPS campaign. We connect directly to your Mailchimp account and survey you subscribers straight away .</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h2 class="center light-blue-text cm-home-icons"><i class="mdi-image-color-lens"></i></h2>
+            <h5 class="center">Beautiful design</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Responsive emails designed to work on any device. You can customise the colors and include your logo.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h2 class="center light-blue-text cm-home-icons"><i class="mdi-editor-insert-chart"></i></h2>
+            <h5 class="center">Data that is easy to work with</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">We don't just calculate your Net Promoter Score, you can also easily browse all of the feedback with our unique instant search.</p>
           </div>
         </div>
       </div>

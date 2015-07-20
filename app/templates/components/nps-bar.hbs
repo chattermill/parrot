@@ -1,11 +1,17 @@
-{{#nps-bar-section class="progress-bar-success" style=promoterBarStyle}}
-  {{percentage campaign.percentagePromoters}} Promoters
+{{#nps-bar-section class="cm-promoter" style=promoterBarStyle }}
+  {{#tooltip-on-parent effectClass='grow'}}
+    {{percentage campaign.percentagePromoters}} Promoters
+  {{/tooltip-on-parent}}
 {{/nps-bar-section}}
 
-{{#nps-bar-section class="progress-bar-warning" style=passiveBarStyle}}
-  {{percentage campaign.percentagePassives}} Passives
+{{#nps-bar-section class="cm-passive" style=passiveBarStyle}}
+  {{#tooltip-on-parent effectClass='grow'}}
+    {{percentage campaign.percentagePassives}} Passives
+  {{/tooltip-on-parent}}
 {{/nps-bar-section}}
 
-{{#nps-bar-section class="progress-bar-danger" style=detractorBarStyle}}
-  {{percentage campaign.percentageDetractors}} Detractors
+{{#nps-bar-section class="cm-detractor" style=detractorBarStyle}}
+  {{#tooltip-on-parent effectClass='grow'}}
+    {{percentage campaign.percentageDetractors}} Detractors
+  {{/tooltip-on-parent}}
 {{/nps-bar-section}} 

@@ -9,5 +9,10 @@ export default Ember.Component.extend({
   foregroundColor: Ember.computed('campaign.foregroundColor', function() {
     var foregroundColor = this.get('campaign.foregroundColor');
     return new Ember.Handlebars.SafeString("color:#" + foregroundColor + ";");
+  }),
+
+  replyAddress: Ember.computed('campaign.replyAddress', function() {
+    var replyAddress = this.get('campaign.replyAddress');
+    return new Ember.Handlebars.SafeString("mailto:" + replyAddress);
   })
 });

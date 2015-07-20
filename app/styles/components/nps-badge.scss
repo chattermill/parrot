@@ -1,19 +1,16 @@
-.cm-nps-bar-section {
-  line-height: 50px;
-  font-size: 18px;
-  color: white;
-  padding-left: 20px;
-}
-.progress {
+.nps-badge {
   .cm-promoter {
+    @extend .white-text;
     background-color: $cm-green;
   }
 
   .cm-passive {
+    @extend .white-text;
     background-color: $cm-grey;
   }
 
   .cm-detractor {
+    @extend .white-text;
     background-color: $cm-pink;
   }
 }

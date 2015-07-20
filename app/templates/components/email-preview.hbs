@@ -17,7 +17,9 @@
                     <td>
                       <center>
                         <div class="mui-container cm-logo-background mui-text-center" style={{backgroundColor}}>
-                          <img class="logo" src={{campaign.imageUrl}}>
+                          <a href={[campaign.companyUrl}>
+                            <img class="logo" src={{campaign.imageUrl}}>
+                          </a>
                         </div>
                       </center>
                     </td>
@@ -77,7 +79,7 @@
                       <center>
                         <div class="mui-container cm-footer mui-text-center" style={{backgroundColor}}>
                           <div class="mui-text-center">
-                            <a href="http://chattermill.io" style={{foregroundColor}} class="cm-link">Unsubscribe</a> | <a href="http://chattermill.io" style={{foregroundColor}} class="cm-link">View in browser</a> | <a href="http://chattermill.io" style={{foregroundColor}} class="cm-link">Contact</a>
+                            <a href="http://chattermill.io" style={{foregroundColor}} class="cm-link">Unsubscribe</a> | <a href="http://chattermill.io" style={{foregroundColor}} class="cm-link">View in browser</a> | <a href="{{replyAddress}}" style={{foregroundColor}} class="cm-link">Contact</a>
                           </div>
                         </div>
                       </center>

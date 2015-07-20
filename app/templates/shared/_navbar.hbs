@@ -1,8 +1,16 @@
 {{#md-navbar name='Chattermill' class='indigo darken-4'}}
   {{#if session.isAuthenticated}}
+    {{#if session.currentUser.campaigns}}
+      {{#link-to 'campaigns' tagName='li'}}
+        {{#link-to 'campaigns' }}
+          <i class="material-icons left">view_list</i>All campaigns
+        {{/link-to}}
+      {{/link-to}}
+    {{/if}}
+
     {{#link-to 'campaigns/design' tagName='li'}}
       {{#link-to 'campaigns/design' }}
-        <i class="material-icons left">add</i>New Campaign
+        <i class="material-icons left">add</i>New campaign
       {{/link-to}}
     {{/link-to}}
 
@@ -18,8 +26,7 @@
   {{else}}
     {{#link-to 'login' tagName='li'}}
       {{#link-to 'login'}}
-        <i class="material-icons left">perm_identity</i>Settings
-        Login
+        <i class="material-icons left">perm_identity</i>Login
       {{/link-to}}    
     {{/link-to}}    
   {{/if}}

@@ -1,9 +1,19 @@
-<ul>
-  {{#each model as |campaign|}}
-    <li>
-      {{#link-to 'campaign' campaign.id}}
-        {{campaign.companyName}} - {{time-format campaign.createdAt "MMMM D YYYY"}}
+<div class="container">
+  {{#md-card title="Net Promoter Score" id="basic-card"}}
+      {{#md-card-content}}
+        {{ember-chart type="Bar" data=chartData height=200 legend=true}}  
+      {{/md-card-content}}
+  {{/md-card}}
+
+  {{#md-collection content=model as |campaign|}}
+    <div class='collection-item avatar'>
+      {{#link-to 'campaign' campaign.id }}
+        <span class="title">{{campaign.companyName}}</span>
+      {{/link-to}}  
+      <p>{{time-format campaign.createdAt "MMMM D YYYY"}}</p>
+      {{#link-to 'campaign' campaign.id class='secondary-content'}}
+        {{md-badge class='deep-purple white-text' text=campaign.score}}
       {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+    </div>
+  {{/md-collection}}
+</div>

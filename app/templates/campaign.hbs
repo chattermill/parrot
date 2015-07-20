@@ -1,31 +1,68 @@
 <div class="container">
-  <p>Product name: {{model.companyName}}</p>
-  <p>Sent at: {{time-format model.createdAt "MMMM D YYYY"}}</p>
-  <p>Number of surveyssent : {{model.numberOfSurveysSent}}</p>
-  <p>Number of responses: {{model.numberOfResponses}}</p>
-  <p>Response rate: {{percentage model.responseRate}}</p>
+  {{#md-card title=title}}
+    {{#md-card-content}}
+      <div class="row">
+        <div class="col s11">
+          {{nps-bar campaign=model}}
+        </div>
+        <div class="col s1">
+          {{nps-score score=score tooltipContent="Net Promoter Score" tooltipPlace="top-right" tooltipEffectClass="grow"}}
+        </div>
+      </div>
+    {{/md-card-content}}
+  {{/md-card}}
 
+  {{#md-card title="Campaign details"}}
+    {{#md-card-content}}
+      <div class="row">
+        
+      <div class="col s4 center-align">
+        <h3>
+          {{model.numberOfSurveysSent}} Surveys sent
+        </h3>
+        </div>
+        <div class="col s4 center-align">
+          <h3>
+            {{model.numberOfResponses}} Responses
+          </h3>
+        </div>
+        <div class="col s4 center-align">
+          <h3>
+            {{percentage model.responseRate}} Response Rate
+          </h3>
+        </div>
+      </div>
+    {{/md-card-content}}
+  {{/md-card}}
 
-  
-  <p>Score: {{percentage model.npsScore}}</p>
-
-  {{nps-bar campaign=model}}
-   
-
-  {{#fm-form action='searchResponses'}}
-    {{fm-field type='text' value=query placeholder='Search'}}
-  {{/fm-form}}
-
-{{#if results}}
-  <ul>
-  {{#each results as |result|}}
-    <li>
-      {{result.body}}
-    </li>
-  {{/each}}
-  </ul>
-{{else}}
-  No responses yet.
-{{/if}}
-  
+  {{#md-card title="Verbatims"}}
+    {{#md-card-content}}
+      <div class="container">
+        <div class="row">
+          {{md-input value=query
+            label='Search verbatims'
+            validate=false
+            icon="mdi-action-search light-blue-text"}}
+        </div>
+        {{#if results}}
+          <div class="row">
+              {{#md-collection content=results as |result|}}
+                <div class='collection-item'>
+                  {{result.body}}
+                  <span class='secondary-content nps-badge'>
+                    {{nps-badge score=result.score}}
+                  </span>
+                </div>
+              {{/md-collection}}
+          </div>
+        {{else}}
+          <div class="row">
+            <div class="container">
+              No responses.
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    {{/md-card-content}}
+  {{/md-card}}
 </div>

@@ -1,39 +1,57 @@
 import DS from 'ember-data';
 import ValidatorMixin from 'ember-cli-data-validation/mixins/validator';
+import Ember from 'ember';
 
 export default DS.Model.extend(ValidatorMixin, {
   companyName: DS.attr('string', {
     validation: {
       required: true,
-    }
+    },
+    defaultValue: "Awesome Co"
   }),
   fromName: DS.attr('string', {
     validation: {
       required: true,
-    }
+    },
+    defaultValue: "Emma from Awesome Co"
   }),
-  backgroundColor: DS.attr('string'),
-  foregroundColor: DS.attr('string'),
+  backgroundColor: DS.attr('string', {
+    defaultValue: 'FD6E94'
+  }),
+  foregroundColor: DS.attr('string', {
+    defaultValue: 'FFFFFF'
+  }),
   replyAddress: DS.attr('string', {
     validation: {
       required: true,
       email: true,
-    }
+    },
+    defaultValue: "awesome@awesome.com"
   }),
-  imageUrl: DS.attr('string'),
+  imageUrl: DS.attr('string', {
+    validation: {
+      required: true,
+    },
+    defaultValue: 'https://s3-us-west-2.amazonaws.com/chattermill/images/awesomeCo.png'
+  }),
   fromAddress: DS.attr('string', {
     validation: {
       required: true,
       email: true,
-    }
+    },
+    defaultValue: "no-reply@awesome.com"
   }),
   companyUrl: DS.attr('string', {
     validation: {
       required: true,
       url: true
-    }
+    },
+    defaultValue: "http://awesome.com"
   }),
   npsScore: DS.attr('number'),
+  score: Ember.computed('npsScore', function() {
+    return this.get('npsScore') * 100;
+  }),
   percentagePromoters: DS.attr('number'),
   percentageDetractors: DS.attr('number'),
   percentagePassives: DS.attr('number'),

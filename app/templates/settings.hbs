@@ -1,12 +1,16 @@
 <div class="section">
   <div class="row">
     <div class="col m4 s12 offset-m4">
-      {{md-select content=lists
-        value=selected
-        label="Mailchimp list"
-        prompt="Select the list you want to survey"
-        optionLabelPath="content.name"
-        optionValuePath="content.id"}}
-    </div>
+      {{#md-card title="Choose a list to survey" class="cm-select-list"}}
+        {{#md-card-content}}
+          {{md-select content=lists
+            value=selected
+            label="Mailchimp list"
+            prompt="Select the list you want to survey"
+            optionLabelPath="content.name"
+            optionValuePath="content.id"}}
+        {{/md-card-content}}
+      {{/md-card}}
+      </div>
   </div>
 </div>

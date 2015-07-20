@@ -5,7 +5,13 @@ export default Ember.Controller.extend({
   queryParams: ['score', 'token'],
   score: null,
   token: null,
-  
+
+  title: Ember.computed('score', function() {
+    var score = this.get('score');
+
+    return "Please tell us why you chose a " + score;
+  }),
+
   actions: {
     submitResponse: function() {
       var controller = this;

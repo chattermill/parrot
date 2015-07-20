@@ -25,6 +25,7 @@
     "ember-cli": "1.13.0",
     "ember-cli-app-version": "0.3.3",
     "ember-cli-babel": "^5.0.0",
+    "ember-cli-chart": "2.0.4",
     "ember-cli-content-security-policy": "0.4.0",
     "ember-cli-data-validation": "0.0.8",
     "ember-cli-dates": "1.1.2",
@@ -53,9 +54,11 @@
     "ember-key-responder": "0.2.1",
     "ember-modal-dialog": "0.7.5",
     "ember-model-validator": "0.0.18",
+    "ember-moment": "1.2.1",
     "ember-new-computed": "1.0.2",
     "ember-percentages": "1.1.0",
     "ember-radio-button": "1.0.4",
+    "ember-tooltips": "0.2.0",
     "ember-watson": "0.5.9",
     "torii": "0.4.1"
   }

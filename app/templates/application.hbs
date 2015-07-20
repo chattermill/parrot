@@ -1,12 +1,13 @@
-<header>
-  {{partial "shared/navbar"}}
-</header>
+{{#if renderNavbar}}
+  <header>
+    {{partial "shared/navbar"}}
+  </header>
+{{/if}}
 <main>
   <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      {{outlet}}
-    </div>
+    {{outlet}}
   </div>
 </main>
-
-{{partial "shared/footer"}}
+{{#if renderNavbar}}
+  {{partial "shared/footer"}}
+{{/if}}

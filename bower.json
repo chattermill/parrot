@@ -20,6 +20,7 @@
     "bootstrap-sass": "~3.3.5",
     "ember-cli-moment-shim": "~0.2.0",
     "materialize": "~0.97.0",
-    "pace": "vectart/pace#master"
+    "pace": "vectart/pace#master",
+    "chartjs": "1.0.2"
   }
 }

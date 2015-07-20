@@ -5,6 +5,7 @@
 
 @import "components/nps-bar";
 @import "components/nps-bar-section";
+@import "components/nps-badge";
 @import "components/email-preview";
 
 
@@ -16,7 +17,7 @@ body {
 
 main {
   flex: 1 0 auto;
-  min-height: 75vh;
+  min-height: 83vh;
 }
 
 .colpick {
@@ -27,4 +28,32 @@ main {
   .full-width {
     width: 100%;
   }
+}
+
+.cm-thank-you {
+  background-color: $cm-green;
+  margin-top: 20%;
+}
+
+.cm-chattermill-link {
+  color: $cm-pink;
+}
+
+.cm-header {
+  margin-top: 10vh;
+  color: $cm-green; 
+}
+
+.cm-icon-container {
+  margin-top: 10vh;
+}
+
+h2.cm-home-icons {
+  font-size: 56px;
+  line-height: 64px;
+}
+
+.cm-select-list {
+  padding-top: 20px;
+  height: 50vh
 }

@@ -64,3 +64,56 @@ a.cm-btn-10 {
     color: white;
   }
 }
+
+  @media only screen and (max-width: 1200px) {
+    div.mui-container {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    div.cm-nps-question {
+      padding: 20px 10% !important;
+      font-size: 24px !important;
+    }
+    a.mui-btn {
+      font-size: 17px !important;
+      padding: 10px 2% !important;
+      margin: 0px -1px !important;
+    }
+    a.cm-btn-10 {
+      padding: 10px 4px !important;
+    }
+    div.cm-rating-guide {
+      width: 43% !important;
+      padding-left: 12% !important;
+    }
+    
+  }
+  @media only screen and (max-width: 900px) {
+    div.mui-container {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    div.cm-nps-question {
+      padding: 20px 5% !important;
+      font-size: 24px !important;
+    }
+    a.mui-btn {
+      font-size: 17px !important;
+      padding: 10px 6px !important;
+      margin: 0px -1px !important;
+    }
+    a.cm-btn-10 {
+      padding: 10px 3px !important;
+    }
+    div.cm-rating-guide {
+      width: 49% !important;
+      padding-left: 0 !important;
+    }
+    div.voting-buttons {
+      margin-left: -15px !important;
+      margin-right: -15px !important;
+    }
+    .cm-footer .cm-link {
+      font-size: 13px !important;
+    }
+  }
