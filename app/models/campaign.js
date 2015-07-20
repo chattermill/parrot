@@ -16,10 +16,10 @@ export default DS.Model.extend(ValidatorMixin, {
     defaultValue: "Emma from Awesome Co"
   }),
   backgroundColor: DS.attr('string', {
-    defaultValue: 'FD6E94'
+    defaultValue: 'FFFFFF'
   }),
   foregroundColor: DS.attr('string', {
-    defaultValue: 'FFFFFF'
+    defaultValue: '000000'
   }),
   replyAddress: DS.attr('string', {
     validation: {
@@ -32,7 +32,7 @@ export default DS.Model.extend(ValidatorMixin, {
     validation: {
       required: true,
     },
-    defaultValue: 'https://s3-us-west-2.amazonaws.com/chattermill/images/awesomeCo.png'
+    defaultValue: 'https://s3-us-west-2.amazonaws.com/chattermill/images/oie_LlN2BfgNsx0x.png'
   }),
   fromAddress: DS.attr('string', {
     validation: {
